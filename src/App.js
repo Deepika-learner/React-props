@@ -1,16 +1,31 @@
 //import ClassComponent from './ClassComponent'
 //import PropsExample from './PropsExample'
 //import FuncProps from './FuncProps'
-import StateExample from './StateExample'
+//import StateExample from './StateExample'
 //import DemoExample from './DemoExample'
 //import Events from './Events'
 //import JSX from './JSX'
+import Home from './components/Home'
+import About from './components/About'
+import Contact from './components/Contact'
+import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import Navbar from './components/Navbar'
+import NotFound from './components/NotFound'
 
 function App() {
   return(
      <section>
-     <StateExample/>
-      {/*<JSX/>
+         <BrowserRouter>
+            <Navbar/>
+            <Routes> 
+               <Route path="/" element={<Home/>}/>
+               <Route path="/about" element={<About/>}/>
+               <Route path="/contact" element={<Contact/>}/>
+               <Route path="*" element={<NotFound/>}/>
+             </Routes>
+         </BrowserRouter>
+     {/*<StateExample/>
+      <JSX/>
      <Events/>
      <DemoExample name="Deepu" class="Cams"/>
      <StateExample/>
